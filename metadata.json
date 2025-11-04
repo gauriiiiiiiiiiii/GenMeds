@@ -1,0 +1,8 @@
+{
+  "name": "GenMeds",
+  "description": "GenMeds is an intelligent decision-support tool empowering patients in India to find safe, affordable, and government-approved generic alternatives to branded medicines. Not a pharmacy, but a platform for transparent, ethical, and accessible healthcare information.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
