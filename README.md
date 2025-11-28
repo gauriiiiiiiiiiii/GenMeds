@@ -1,8 +1,9 @@
-# 💊 GenMeds: Your Smart Generic Medicine Finder 🇮🇳
+# 💊 GenMeds: Your Smart Generic Medicine Finder 
 
 ## 🌟 Overview
 
-Welcome to **GenMeds**! 🚀 An intelligent decision-support tool designed to empower patients and consumers in India with transparent, accessible, and reliable information about medicines. By leveraging the power of **Google's Gemini AI**, GenMeds helps you find safe and affordable generic alternatives, understand your prescriptions, identify unknown pills, check for drug interactions, and locate nearby pharmacies with ease.
+**GenMeds**! 🚀 is an intelligent decision-support tool designed to empower patients and consumers in India with transparent, accessible, and reliable information about medicines. 
+By leveraging the power of **Google's Gemini AI**, GenMeds helps you find safe and affordable generic alternatives, understand your prescriptions, identify unknown pills, check for drug interactions, and locate nearby pharmacies with ease.
 
 **🚨 Disclaimer:** GenMeds is an informational tool, not a pharmacy or a substitute for professional medical advice. Always consult a qualified healthcare professional before making any decisions regarding your health or medication.
 
@@ -156,71 +157,7 @@ GenMeds requires a **Google API Key** that is enabled for both the **Gemini API*
 
 4.  **Open in Browser:**
     Vite will start a development server and provide a local URL (usually `http://localhost:5173`). Open this URL in your web browser to see the application running live. Changes you make to the code will be reflected instantly.
-
-### 🚨 Troubleshooting: "The Map is Not Working!"
-
-If the store locator map shows an error or doesn't load, the issue is almost always with the Google Cloud configuration for your API key. The application code is designed to show a detailed error message. Please follow this checklist carefully:
-
-1.  **Is Billing Enabled? (Most Common Issue)**
-    *   Go to your [Google Cloud Console](https://console.cloud.google.com/).
-    *   Select your project.
-    *   Navigate to the "Billing" section.
-    *   **Confirm that your project is linked to an active billing account.** The Google Maps JavaScript API has a generous free tier, but it **will not work at all** without a valid billing account linked to the project.
-
-2.  **Is the "Maps JavaScript API" Enabled?**
-    *   In your project's dashboard, go to "APIs & Services" > "Library".
-    *   Search for "Maps JavaScript API".
-    *   Make sure it is **ENABLED**.
-
-3.  **Is Your API Key Correct in the `.env` file?**
-    *   Double-check that you have a file named `.env` in the root of your project.
-    *   Ensure the line in the file looks exactly like this, with your key: `GEMINI_API_KEY="ai..."`. There should be no extra spaces or characters.
-
-4.  **Have You Removed API Key Restrictions?**
-    *   For local testing, go to "APIs & Services" > "Credentials" and select your API key.
-    *   Under "Application restrictions", select "None" to temporarily remove any restrictions that might be blocking the request from `localhost`. (Remember to add restrictions for production!)
-
-Solving these four points will resolve over 99% of map-related issues.
-
----
-
-## ☁️ Deployment
-
-Deploying GenMeds is straightforward with modern hosting platforms like Vercel or Netlify, which connect directly to your GitHub repository.
-
-### Recommended Method: Vercel / Netlify
-
-These platforms offer a seamless deployment experience with Continuous Integration and Continuous Deployment (CI/CD) built-in.
-
-1.  **Push to GitHub:**
-    Make sure your project is pushed to a GitHub repository.
-
-2.  **Create a Project on Your Hosting Provider:**
-    *   Sign up for an account on [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/).
-    *   Create a new project and import your GitHub repository.
-
-3.  **Configure Build Settings:**
-    The platform should automatically detect that you're using Vite. The default settings are usually correct:
-    *   **Build Command:** `npm run build` or `vite build`
-    *   **Output Directory:** `dist`
-
-4.  **Add Environment Variable:**
-    *   In your project's settings on Vercel or Netlify, navigate to the "Environment Variables" section.
-    *   Add a new variable:
-        *   **Name:** `GEMINI_API_KEY`
-        *   **Value:** Paste your Google API Key here.
-
-5.  **Deploy!**
-    Trigger a deployment. Your site will be built and deployed to a public URL. Future pushes to your main branch on GitHub will automatically trigger new deployments.
-
-### ⚠️ Security Warning: Client-Side API Keys
-
-This project places the Google API key directly into the client-side JavaScript code. **This is not secure for a production application.** Anyone visiting the site can find your API key and potentially use it, which could lead to unexpected charges on your Google Cloud bill.
-
-**For a real-world application, you should proxy all API calls through a backend server (e.g., a Node.js/Express server or a serverless function).** The backend server would securely store the API key and make requests to the Gemini API on behalf of the client, preventing the key from ever being exposed in the browser.
-
-This project uses a client-side approach for simplicity and demonstration purposes. **Always protect your API keys!**
-
+    
 ---
 
 ## 📂 Project Structure Explained
@@ -228,6 +165,7 @@ This project uses a client-side approach for simplicity and demonstration purpos
 The project is organized logically to separate concerns, making it easy to navigate and maintain.
 
 ```
+
 /
 ├── components/         # All reusable React components
 ├── services/
@@ -242,4 +180,5 @@ The project is organized logically to separate concerns, making it easy to navig
 ├── types.ts              # All TypeScript type definitions and interfaces
 ├── vite.config.ts            # Vite configuration file
 └── ... (other config files)
+
 ```
